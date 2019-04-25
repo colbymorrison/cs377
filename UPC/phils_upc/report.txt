@@ -1,0 +1,1 @@
+Implementing the first 2 problems amounted to changing only a couple of lines: doing a check on MYTHREAD and changing the lock attemps to locks. I didn't find that too dificult. I like how this solution eliminates busy waiting and it's always fun to see my UPC programs deployed across the network!

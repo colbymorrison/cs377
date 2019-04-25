@@ -1,0 +1,104 @@
+\documentclass[11pt]{exam}
+\usepackage{pdfsync}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+%
+%  Update these values for headers
+%
+\header{CS377\\Assignment 2 }{}{Colby Morrison}
+\begin{document}
+
+\begin{enumerate}
+  \item[2.] A perfect interleaving gives a final value of $10$. The scenario table is divided by each iteration. We give the first 3 iterations, then continue in the same pattern 7 more times. 
+    \begin{center}
+    \begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+      \hline
+      \textbf{p} & \textbf{q} & \textbf{n} & \textbf{p.temp} & \textbf{q.temp}\\
+      \hline
+      \textbf{p1} & q1 & 0 & - & -\\
+      p2 & \textbf{q1} & 0 & - & -\\
+      \textbf{p2} & q2 & 0 & - & - \\
+      p3 & \textbf{q2} & 0 & 0 & - \\
+      \textbf{p3} & q3 & 0 & 0 & 0 \\
+      p1 & \textbf{q3} & 1 & 0 & 0 \\ 
+      \hline
+      \textbf{p1} & q1 & 1 & 0 & 0\\
+      p2 & \textbf{q1} & 1 & 0 & 0\\
+      \textbf{p2} & q2 & 1 & 0 & 0 \\
+      p3 & \textbf{q2} & 1 & 1 & 0 \\
+      \textbf{p3} & q3 & 1 & 1 & 1 \\
+      p1 & \textbf{q3} & 2 & 1 & 1 \\
+      \hline
+      \textbf{p1} & q1 & 2 & 1 & 1\\
+      p2 & \textbf{q1} & 2 & 1 & 1\\
+      \textbf{p2} & q2 & 2 & 1 & 1 \\
+      p3 & \textbf{q2} & 2 & 2 & 1 \\
+      \textbf{p3} & q3 & 2 & 2 & 2 \\
+      p1 & \textbf{q3} & 3 & 2 & 2 \\
+      \vdots & \vdots & \vdots & \vdots & \vdots\\
+      p1 & \textbf{q3} & 10 & 9 & 9 \\
+      \textbf{p1} & q1 & 10 & 9 & 9 \\
+      (end) & \textbf{q1} & 10 & - & 9\\
+      (end) & (end) & 10 & - & -\\
+      \hline
+          \end{tabular}
+  \end{center}
+\item[3.]
+    \begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|}
+      \hline
+      \textbf{p} & \textbf{q} & \textbf{n} & \textbf{p.temp} & \textbf{q.temp}\\
+      \hline
+      \textbf{p1} & q1 & 0 & - & -\\
+      p2 & \textbf{q1} & 0 & - & -\\
+      \textbf{p2} & q2 & 0 & - & - \\
+      p3 & \textbf{q2} & 0 & 0 & - \\
+      \textbf{p3} & q3 & 0 & 0 & 0 \\
+      \hline
+      \textbf{p1} & q3 & 1 & 0 & 0\\
+      \textbf{p2} & q3 & 1 & 0 & 0\\
+      \textbf{p3} & q3 & 1 & 1 & 0 \\
+      \hline
+      \textbf{p1} & q3 & 2 & 1 & 0\\
+      \textbf{p2} & q3 & 2 & 1 & 0\\
+      \textbf{p3} & q3 & 2 & 2 & 0 \\
+      \hline
+      \textbf{p1} & q3 & 3 & 2 & 0\\
+      \textbf{p2} & q3 & 3 & 2 & 0\\
+      \textbf{p3} & q3 & 3 & 3 & 0 \\
+      \vdots & \vdots & \vdots & \vdots & \vdots\\
+      \textbf{p1} & q3 & 8 & 7 & 0\\
+      \textbf{p2} & q3 & 8 & 7 & 0\\
+      \textbf{p3} & q3 & 8 & 8 & 0\\
+      \hline
+      \textbf{p1} & q3 & 9 & 8 & 0\\
+      p2 & \textbf{q3} & 9 & 8 & 0\\
+      p2 & \textbf{q1} & 1 & 8 & 0\\
+      \textbf{p2} & q2 & 1 & 8 & 0\\
+      p3 & \textbf{q2} & 1 & 1 & 0\\
+      p3 & \textbf{q3} & 1 & 1 & 1\\
+      \hline
+      p3 & \textbf{q1} & 2 & 1 & 1\\
+      p3 & \textbf{q2} & 2 & 1 & 1\\
+      p3 & \textbf{q3} & 2 & 1 & 2\\
+      \hline
+      p3 & \textbf{q1} & 3 & 1 & 2\\
+      p3 & \textbf{q2} & 3 & 1 & 2\\
+      p3 & \textbf{q3} & 3 & 1 & 3\\
+      \hline
+      p3 & \textbf{q1} & 4 & 1 & 3\\
+      p3 & \textbf{q2} & 4 & 1 & 3\\
+      p3 & \textbf{q3} & 4 & 1 & 4\\
+      \vdots & \vdots & \vdots & \vdots & \vdots\\
+      p3 & \textbf{q3} & 9 & 1 & 9\\
+      p3 & \textbf{q1} & 10 & 1 & 9\\
+      \textbf{p3} & (end) & 10 & 1 & -\\
+      \textbf{p1} & (end) & 2 & 1 & -\\
+      (end) & (end) & 2 & - & - \\
+      \hline
+    \end{tabular}
+  \item[4.] $n$ can range from $-k$ to $k$.
+  \end{enumerate}
+  \end{document}
+
+

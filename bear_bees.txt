@@ -1,0 +1,27 @@
+Bear and the Honeybees. I.e. producer-consumer with multiple producers and one consumer.
+Solution with split binary semaphores:
+
+int portions = 0;
+sem empty = 1, pot = 0;
+
+process Bear{
+    while(true){
+        sleep();
+        wait(pot);
+        portions = 0; // eats all the honey
+        signal(empty);
+    }
+} 
+
+
+process Bee[i = 1 to n]{
+    while(true){
+        wait(empty);
+        portions++;
+        if(portions == H)
+            signal(pot); // Passing the baton (let bear signal empty)
+                         // The bear only gets signaled when the pot is full, so it doesn't have to check the condition itself and possibly busy wait
+        else
+            signal(empty);
+    }
+}

@@ -1,0 +1,5 @@
+This assignment was fun! I think UPC is really cool, it's fun to see my programs run across the network.
+I didn't find the problems too hard, the temperature examples were helpful in using the new syntax. Compiler errors were helpful as well. For example, I learned that shared variables must be static and not automatic.
+It was interesting that the second problem using the "improved for loop"  was faster than the first 
+problem, even when both were compiled with upcc with one thread and then run with upcrun. I'm curious what optimizations happened to create that performance improvement.
+I'm excited to learn more about UPC and to use all the different types of pointers!

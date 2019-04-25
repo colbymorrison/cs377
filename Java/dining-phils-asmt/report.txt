@@ -1,0 +1,6 @@
+Dining Java Philosophers.
+Colby Morrison.
+
+This was another fun assignment! The monitor abstraction is new to me and I've enjoyed getting to use and learn about it. I feel like I now understand how I could add concurrency to my existing Java programs if necessary.
+In the synchronized blocks version, I implemented the philosophers very similar to one of my UPC versions, odd numbered and even numbered philosophers pick up their forks in different orders. One I figured out I should use that strategy, writing the synchronized blocks were fairly simple. The coolest part of that version for me was the Chopsticks class. Using an empty inner Chopstick class solely for the lock it provides is very interesting, I'd never thought I'd write a completely empty Java class with an actual function! 
+Writing the waiter class for the synchronized methods version felt fairly intuitive. I made sure to include any checks in a while loop as Java uses Signal and Continue semantics. 
