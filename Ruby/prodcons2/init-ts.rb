@@ -16,12 +16,11 @@ ts = Rinda::TupleSpaceProxy.new(DRbObject.new(nil, URI))
 
 # initialize tuple space
 #   int buf;
-#   int n = 80;
-#   int p = 0;
-#   int c = 0;
+#   sem empty = 1;
+#   sem full = 0;
 
-ts.write( ["n", 80] )
-ts.write( ["p", 0] )
-ts.write( ["c", 0] )
+
+ts.write( ["sem", "empty"])
+ts.write( ["buf", 0] )
 puts "init-ts: tuple space initialized..."
 
