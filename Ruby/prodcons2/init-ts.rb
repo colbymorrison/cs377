@@ -2,10 +2,9 @@ require 'rinda/rinda'
  
 #
 # cs377
-# fall 2016
-# Producer-Consumer v1
+# Producer-Consumer v2
 # Solution
-# Marc Smith
+# Colby Morrison
 # init-ts.rb
 #
 

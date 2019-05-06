@@ -2,10 +2,9 @@ require 'rinda/rinda'
 
 #
 # cs377
-# fall 2016
-# Producer-Consumer v1
+# Producer-Consumer v3
 # Solution
-# Marc Smith
+# Colby Morrison
 # producer.rb
 #
 #
@@ -17,15 +16,20 @@ count = 0
 tag, n = ts.read(["n", Numeric])
 
 while true do
-  ts.take(["sem", "empty"])
-  tag, rear = ts.take(["rear", Numeric])
+    # P(empty);
+    # buf[rear] = data;
+    # rear = (rear+1)%n;
+    # V(full); 
+    #
+    ts.take(["sem", "empty"])
+    tag, rear = ts.take(["rear", Numeric])
 
-  puts "producer produced: #{count} at index #{rear}"
+    puts "producer produced: #{count} at index #{rear}"
 
-  ts.write(["buf", rear, count])
+    ts.write(["buf", rear, count])
 
-  ts.write(["rear",(rear+1)%n]) 
+    ts.write(["rear",(rear+1)%n]) 
 
-  ts.write(["sem", "full"])
-  count += 1
+    ts.write(["sem", "full"])
+    count += 1
 end
