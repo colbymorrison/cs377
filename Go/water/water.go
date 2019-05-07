@@ -3,8 +3,9 @@ package main
 import "fmt"
 import "sync"
 
+
 func hydrogen(water chan<- bool, log chan<- string){
-	for{
+	for {
 		// Infinitley create new hydrogen atoms
 		water <- true
 		log <- "Hydrogen created"
@@ -12,7 +13,7 @@ func hydrogen(water chan<- bool, log chan<- string){
 }
 
 func oxygen(water chan<- bool, log chan<- string){
-	for{
+	for {
 		// Infinitley create new oxygen atoms
 		water <- true
 		log <- "Oxygen created"
@@ -22,7 +23,7 @@ func oxygen(water chan<- bool, log chan<- string){
 func molecule(h1 <-chan bool, h2 <-chan bool, o <-chan bool, log chan<- string){
 	hCount := 0
 	oCount := 0
-	for{
+	for {
 		select{
 		case <-h1:
 			hCount++
@@ -32,7 +33,7 @@ func molecule(h1 <-chan bool, h2 <-chan bool, o <-chan bool, log chan<- string){
 			oCount++;
 		}
 		if(hCount >= 2 && oCount >= 1){
-			log <- "Created Water"
+			log <- fmt.Sprintf("Created Water, hCount %d, oCount%d", hCount, oCount)
 			hCount -= 2
 			oCount -= 1
 		}
@@ -61,7 +62,7 @@ func waterLog(h1 <-chan string, h2 <-chan string, o <-chan string, molecule <-ch
 */
 func makeWater(){
 	var wg sync.WaitGroup
-	wg.Add(1) 
+	wg.Add(4) 
 
 	makeH1 := make(chan bool)
 	makeH2 := make(chan bool)
