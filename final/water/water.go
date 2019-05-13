@@ -5,7 +5,7 @@
 * water.go
 * Colby Morrison
 *
-* Solution to the water molecules problem.
+* Solution to the water molecule problem.
  */
 
 package main
