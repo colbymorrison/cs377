@@ -1,3 +1,12 @@
+#
+# cs377
+# S'mores Problem
+# Colby Morrison
+# init-ts.rb
+#
+# Initialize tuple space 
+
+
 require 'rinda/rinda'
 
 # Connect to tuple space

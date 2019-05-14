@@ -1,3 +1,11 @@
+#
+# cs377
+# S'mores Problem
+# Colby Morrison
+# select.rb
+#
+# Select process, this is the child that doesn't eat
+
 require 'rinda/rinda'
 
 # Connect to tuple space
@@ -8,7 +16,7 @@ ts = Rinda::TupleSpaceProxy.new(DRbObject.new(nil, URI))
 ingredients = Array["chocolate", "graham", "marshmallow"]
 
 while true do 
-    # Make sure they're done eating
+    # Grab select semaphore
     ts.take(["sem", "select"])
 
     #Get 2 random ingredients

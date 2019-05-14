@@ -6,7 +6,7 @@
 * Colby Morrison
 *
 * Solution to the water molecule problem.
- */
+*/
 
 package main
 
