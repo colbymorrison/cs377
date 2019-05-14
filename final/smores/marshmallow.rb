@@ -20,11 +20,11 @@ count = 0
 while true do
     # Wait to be signaled by the select process
     puts "Waiting for chocoalte and graham to be put on the table"
-    ts.take(["eat", "m"])
+    ts.take(["eat", "marshmallow"])
     
     # Grab ingredients off table
-    ts.take(["table", "c"])
-    ts.take(["table", "g"])
+    ts.take(["table", "chocolate"])
+    ts.take(["table", "graham"])
 
     # Increment count
     count += 1
